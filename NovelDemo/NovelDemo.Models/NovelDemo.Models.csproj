@@ -53,6 +53,7 @@
     <Compile Include="Entity\Partial\Book.cs" />
     <Compile Include="Entity\Partial\Category.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Implement\AuthorRepository.cs" />
     <Compile Include="Repositories\Implement\DapperGenericRepository.cs" />
     <Compile Include="Repositories\Implement\DatabaseConnectionFactory.cs" />
     <Compile Include="Repositories\Interface\IDbConnectionFactory.cs" />
