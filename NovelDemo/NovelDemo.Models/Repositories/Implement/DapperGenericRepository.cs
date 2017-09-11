@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dapper;
+using DapperExtensions;
 using NovelDemo.Models.Repositories.Interface;
 using System.Data.Common;
 
@@ -11,31 +11,45 @@ namespace NovelDemo.Models.Repositories.Implement
 {
     public class DapperGenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private IDbConnectionFactory DbConnectionFactory { get; }
+        protected IDbConnectionFactory DbConnectionFactory { get; }
 
         public DapperGenericRepository(IDbConnectionFactory dbConnectionFactory)
         {
             DbConnectionFactory = dbConnectionFactory;
         }
 
-        public int Delete(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            using (var conn = this.DbConnectionFactory.Create())
+            {
+                return conn.GetList<TEntity>();
+            }
         }
 
-        public int Insert(TEntity entity)
+        public void Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            using (var conn = this.DbConnectionFactory.Create())
+            {
+                conn.Insert(entity);
+            }
         }
 
-        public int Update(TEntity entity)
+        public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            using (var conn = this.DbConnectionFactory.Create())
+            {
+                conn.Update(entity);
+            }
         }
+
+        public void Delete(TEntity entity)
+        {
+            using (var conn = this.DbConnectionFactory.Create())
+            {
+                conn.Delete(entity);
+            }
+        }
+
+
     }
 }

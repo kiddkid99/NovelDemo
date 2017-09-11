@@ -10,10 +10,10 @@ namespace NovelDemo.Models.Repositories.Interface
     {
         IEnumerable<TEntity> GetAll();
 
-        int Insert(TEntity entity);
+        void Insert(TEntity entity);
 
-        int Update(TEntity entity);
+        void Update(TEntity entity);
 
-        int Delete(TEntity entity);
+        void Delete(TEntity entity);
     }
 }
