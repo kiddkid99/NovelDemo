@@ -51,3 +51,5 @@ _ReSharper*/
 
 # Office Temp Files
 ~$*
+NovelDemo/NovelDemo.Web/App_Data/NovelDemo.mdf
+NovelDemo/NovelDemo.Web/App_Data/NovelDemo.ldf
