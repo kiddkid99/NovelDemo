@@ -48,7 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fake\FakeAuthorRepository.cs" />
+    <Compile Include="Fake\FakeGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AuthorRepositoryUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
