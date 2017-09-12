@@ -132,6 +132,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\LayoutController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +150,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NovelDemo.Models\NovelDemo.Models.csproj">
+      <Project>{2697b923-6bde-4fe3-a782-048935144a0f}</Project>
+      <Name>NovelDemo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NovelDemo.Service\NovelDemo.Service.csproj">
+      <Project>{51fef5d0-55d5-4ae4-a9c4-bf8e72e41db6}</Project>
+      <Name>NovelDemo.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
