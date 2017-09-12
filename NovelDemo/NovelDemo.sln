@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovelDemo.Models", "NovelDe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovelDemo.Models.Test", "NovelDemo.Models.Test\NovelDemo.Models.Test.csproj", "{1AEBD1E9-E0E8-4691-8E60-808EF68BC14F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovelDemo.Service", "NovelDemo.Service\NovelDemo.Service.csproj", "{51FEF5D0-55D5-4AE4-A9C4-BF8E72E41DB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1AEBD1E9-E0E8-4691-8E60-808EF68BC14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AEBD1E9-E0E8-4691-8E60-808EF68BC14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AEBD1E9-E0E8-4691-8E60-808EF68BC14F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51FEF5D0-55D5-4AE4-A9C4-BF8E72E41DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51FEF5D0-55D5-4AE4-A9C4-BF8E72E41DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51FEF5D0-55D5-4AE4-A9C4-BF8E72E41DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51FEF5D0-55D5-4AE4-A9C4-BF8E72E41DB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
