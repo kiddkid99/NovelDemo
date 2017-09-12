@@ -9,6 +9,8 @@ namespace NovelDemo.Service.Interface
 {
     public interface IAuthorService
     {
+        Author GetById(int id);
+
         IResult Insert(Author entity);
 
         IResult Update(Author entity);

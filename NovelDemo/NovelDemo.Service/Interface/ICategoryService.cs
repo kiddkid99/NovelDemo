@@ -9,6 +9,8 @@ namespace NovelDemo.Service.Interface
 {
     public interface ICategoryService
     {
+        Category GetById(int id);
+
         IResult Insert(Category entity);
 
         IResult Update(Category entity);

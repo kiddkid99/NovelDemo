@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implement\AuthorService.cs" />
+    <Compile Include="Implement\BookService.cs" />
+    <Compile Include="Implement\CategoryService.cs" />
+    <Compile Include="Implement\Result.cs" />
+    <Compile Include="Implement\Service.cs" />
     <Compile Include="Interface\IAuthorService.cs" />
     <Compile Include="Interface\IBookService.cs" />
     <Compile Include="Interface\ICategoryService.cs" />
