@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NovelDemo.Models.Entity.Partial
+namespace NovelDemo.Models.Entity
 {
     public partial class Category
     { 
