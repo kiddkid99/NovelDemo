@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IAuthorService.cs" />
+    <Compile Include="Interface\IBookService.cs" />
+    <Compile Include="Interface\ICategoryService.cs" />
+    <Compile Include="Interface\IResult.cs" />
+    <Compile Include="Interface\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NovelDemo.Models\NovelDemo.Models.csproj">
+      <Project>{2697b923-6bde-4fe3-a782-048935144a0f}</Project>
+      <Name>NovelDemo.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
