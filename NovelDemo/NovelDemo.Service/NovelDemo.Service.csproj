@@ -44,12 +44,12 @@
     <Compile Include="Implement\BookService.cs" />
     <Compile Include="Implement\CategoryService.cs" />
     <Compile Include="Implement\Result.cs" />
-    <Compile Include="Implement\Service.cs" />
+    <Compile Include="Implement\Services.cs" />
     <Compile Include="Interface\IAuthorService.cs" />
     <Compile Include="Interface\IBookService.cs" />
     <Compile Include="Interface\ICategoryService.cs" />
     <Compile Include="Interface\IResult.cs" />
-    <Compile Include="Interface\IService.cs" />
+    <Compile Include="Interface\IServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

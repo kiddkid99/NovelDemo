@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NovelDemo.Service.Implement
 {
-    public class Service : IService
+    public class Services : IServices
     {
         public IBookService Book { get; }
 
@@ -16,7 +16,7 @@ namespace NovelDemo.Service.Implement
         public IAuthorService Author { get; }
 
 
-        public Service(IBookService book, ICategoryService category, IAuthorService author)
+        public Services(IBookService book, ICategoryService category, IAuthorService author)
         {
             Book = book;
             Category = category;

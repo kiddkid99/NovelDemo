@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NovelDemo.Service.Interface
 {
-    public interface IService
+    public interface IServices
     {
         IBookService Book { get; }
 
