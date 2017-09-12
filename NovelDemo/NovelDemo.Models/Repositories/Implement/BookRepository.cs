@@ -34,7 +34,7 @@ namespace NovelDemo.Models.Repositories.Implement
                     @"SELECT * FROM #Book b
                       LEFT JOIN #Author a ON b.AuthorId = a.Id
                       LEFT JOIN #Category c ON b.CategoryId = c.Id
-                      ORDER b.Id";
+                      ORDER BY b.Id";
 
                 var data = conn.Query<Book, Author, Category, Book>(sql, 
                     (book, author, category) =>
