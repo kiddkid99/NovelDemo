@@ -30,5 +30,21 @@ namespace NovelDemo.Models.Test
         }
 
 
+        [TestMethod]
+        public void Test_Get_Real_Data()
+        {
+            //Arrange
+            string connectionString = ConfigurationManager.ConnectionStrings["NovelDemoDb"].ToString();
+            repository = new AuthorRepository(new DatabaseConnectionFactory(connectionString));
+
+
+            //Action
+            var data = repository.GetAll();
+
+            //Asset
+
+        }
+
+
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Entity\Author.cs" />
     <Compile Include="Entity\Book.cs" />
     <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\Mapping\DapperCustomMapping.cs" />
     <Compile Include="Entity\Partial\Author.cs" />
     <Compile Include="Entity\Partial\Book.cs" />
     <Compile Include="Entity\Partial\Category.cs" />
