@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using NovelDemo.Service.Interface;
 using NovelDemo.Web.Application.Infrastructure;
+using NovelDemo.Web.Application.ViewModel;
 
 namespace NovelDemo.Web.Controllers
 {
@@ -14,10 +15,24 @@ namespace NovelDemo.Web.Controllers
         {
         }
 
-        // GET: Author
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var datas = Services.Author.GetAll();
+
+            AuthorIndexViewModel model = new AuthorIndexViewModel
+            {
+                Authors = datas.Select(a => new AuthorViewModel
+                {
+                    Id = a.Id,
+                    FirstName = a.FirstName,
+                    LastName = a.LastName,
+                    Status = a.Status
+                })
+            };
+
+
+            return View(model);
         }
     }
 }
