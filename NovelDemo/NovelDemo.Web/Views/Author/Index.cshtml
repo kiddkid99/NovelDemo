@@ -1,7 +1,36 @@
-﻿
+﻿@model NovelDemo.Web.Application.ViewModel.AuthorIndexViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "作者 | NovelDemo";
 }
 
-<h2>Index</h2>
-
+<h2>作者列表</h2>
+<div>
+    <a class="btn btn-primary" href="@Url.Action("Add")">新增</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Authors.First().Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Authors.First().FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.Authors.First().LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Authors.First().Status)</th>
+            <th>Operator</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in Model.Authors)
+        {
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.FirstName</td>
+                <td>@data.LastName</td>
+                <td>@(data.Status == 1 ? "正常" : "停用")</td>
+                <td>
+                    <a href="@Url.Action("Detail", new { id = data.Id })" class="btn btn-xs btn-info">詳細</a>
+                    <a href="@Url.Action("Edit", new { id= data.Id })" class="btn btn-xs btn-warning">修改</a>
+                    <a href="@Url.Action("Delete", new { id=data.Id })" class="btn btn-xs btn-danger">刪除</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
