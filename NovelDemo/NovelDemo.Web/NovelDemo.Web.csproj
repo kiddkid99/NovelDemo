@@ -144,6 +144,7 @@
     <Compile Include="Application\ViewModel\AuthorIndexViewModel.cs" />
     <Compile Include="Application\ViewModel\AuthorViewModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Global.asax.cs">
@@ -156,6 +157,9 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Author\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,7 +170,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Author\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NovelDemo.Models\NovelDemo.Models.csproj">

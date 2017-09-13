@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 
-namespace NovelDemo.Web.App_Start
+namespace NovelDemo.Web
 {
     public class BundleConfig
     {
