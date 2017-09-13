@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using NovelDemo.Service.Interface;
 
-namespace NovelDemo.Web.Infrastructure
+namespace NovelDemo.Web.Application.Infrastructure
 {
     public class LayoutController : Controller
     {
