@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DapperExtensions;
 using NovelDemo.Models.Repositories.Interface;
 using System.Data.Common;
+using NovelDemo.Models.Entity.Mapping;
 
 namespace NovelDemo.Models.Repositories.Implement
 {
@@ -15,6 +16,7 @@ namespace NovelDemo.Models.Repositories.Implement
 
         public DapperGenericRepository(IDbConnectionFactory dbConnectionFactory)
         {
+            DapperCustomMapping.Mapping();
             DbConnectionFactory = dbConnectionFactory;
         }
 
@@ -22,7 +24,9 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = this.DbConnectionFactory.Create())
             {
-                return conn.GetList<TEntity>();
+                conn.Open();
+                var data =  conn.GetList<TEntity>();
+                return data.ToList();
             }
         }
 
@@ -30,6 +34,7 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = this.DbConnectionFactory.Create())
             {
+                conn.Open();
                 conn.Insert(entity);
             }
         }
@@ -38,6 +43,7 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = this.DbConnectionFactory.Create())
             {
+                conn.Open();
                 conn.Update(entity);
             }
         }
@@ -46,6 +52,7 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = this.DbConnectionFactory.Create())
             {
+                conn.Open();
                 conn.Delete(entity);
             }
         }

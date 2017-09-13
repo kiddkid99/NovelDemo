@@ -22,6 +22,7 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = DbConnectionFactory.Create())
             {
+                conn.Open();
                 return conn.Get<Book>(id);
             }
         }
@@ -30,6 +31,7 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = DbConnectionFactory.Create())
             {
+                conn.Open();
                 string sql = 
                     @"SELECT * FROM #Book b
                       LEFT JOIN #Author a ON b.AuthorId = a.Id

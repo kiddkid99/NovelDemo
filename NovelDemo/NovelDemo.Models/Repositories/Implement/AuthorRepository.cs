@@ -22,6 +22,7 @@ namespace NovelDemo.Models.Repositories.Implement
         {
             using (var conn = DbConnectionFactory.Create())
             {
+                conn.Open();
                 return conn.Get<Author>(id);
             }
         }
