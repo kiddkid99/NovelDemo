@@ -53,4 +53,4 @@ _ReSharper*/
 ~$*
 NovelDemo/NovelDemo.Web/App_Data/NovelDemo.mdf
 NovelDemo/NovelDemo.Web/App_Data/NovelDemo.ldf
-NovelDemo/.vs/config/iisexpress_run.bat
+NovelDemo/.vs/*
