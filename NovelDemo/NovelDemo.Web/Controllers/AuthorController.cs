@@ -12,11 +12,6 @@ namespace NovelDemo.Web.Controllers
 {
     public class AuthorController : LayoutController
     {
-        public AuthorController() : base()
-        {
-
-        }
-
         public AuthorController(IServices services) : base(services)
         {
         }

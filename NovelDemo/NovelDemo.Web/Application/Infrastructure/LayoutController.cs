@@ -15,18 +15,6 @@ namespace NovelDemo.Web.Application.Infrastructure
     {
         protected IServices Services;
 
-        public LayoutController()
-        {
-            //TODO: 直接實體化服務介面，之後需改成使用依賴注入的方式由外部決定介面實體
-            string connectionString = ConfigurationManager.ConnectionStrings["NovelDemoDb"].ToString();
-            IDbConnectionFactory dbConnectionFactory = new DatabaseConnectionFactory(connectionString);
-            IBookService book = new BookService(new BookRepository(dbConnectionFactory));
-            IAuthorService author = new AuthorService(new AuthorRepository(dbConnectionFactory));
-            ICategoryService category = new CategoryService(new CategoryRepository(dbConnectionFactory));
-
-            Services = new Services(book, category, author);
-        }
-
         public LayoutController(IServices services)
         {
             Services = services;
