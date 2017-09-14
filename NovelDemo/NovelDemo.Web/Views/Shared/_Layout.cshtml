@@ -1,5 +1,6 @@
 ﻿@{ 
-    string errorMessage = ViewBag.ErrorMessage;
+    object tempDataErrorMessage = TempData[NovelDemo.Web.Application.Infrastructure.TempDataKey.ErrorMessage];
+    string errorMessage = tempDataErrorMessage != null ? tempDataErrorMessage.ToString() : "";
 }
 
 <!DOCTYPE html>

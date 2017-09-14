@@ -60,15 +60,15 @@ namespace NovelDemo.Web.Controllers
                 };
 
                 var result = Services.Author.Insert(data);
-                if(result.Success)
+                if (result.Success)
                 {
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = result.Exception != null ? result.Exception.Message : result.Message;
+                    TempData[TempDataKey.ErrorMessage] = result.Exception != null ? result.Exception.Message : result.Message;
                     return View();
-                }   
+                }
             }
             else
             {
@@ -78,11 +78,11 @@ namespace NovelDemo.Web.Controllers
 
 
         [HttpGet]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            var data = Services.Author.GetById(id);
+            var data = id.HasValue ? Services.Author.GetById(id.Value) : null;
 
-            if(data != null)
+            if (data != null)
             {
                 AuthorEditViewModel model = new AuthorEditViewModel
                 {
@@ -96,7 +96,7 @@ namespace NovelDemo.Web.Controllers
             }
             else
             {
-                ViewBag.ErrorMessage = "找不到資料";
+                TempData[TempDataKey.ErrorMessage] = "找不到資料";
                 return RedirectToAction("Index");
             }
         }
@@ -107,13 +107,13 @@ namespace NovelDemo.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                Author data = new Author
-                {
-                    Id = model.Id,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Status = (byte)(model.Status ? 1 : 0)
-                };
+                //取出資料
+                var data = Services.Author.GetById(model.Id) ?? new Author();
+
+                //更新指定屬性
+                data.FirstName = model.FirstName;
+                data.LastName = model.LastName;
+                data.Status = (byte)(model.Status ? 1 : 0);
 
                 var result = Services.Author.Update(data);
                 if (result.Success)
@@ -122,12 +122,86 @@ namespace NovelDemo.Web.Controllers
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = result.Exception != null ? result.Exception.Message : result.Message;
+                    TempData[TempDataKey.ErrorMessage] = result.Exception != null ? result.Exception.Message : result.Message;
                     return View();
                 }
             }
             else
             {
+                return View();
+            }
+        }
+
+
+        [HttpGet]
+        public ActionResult Detail(int? id)
+        {
+            var data = id.HasValue ? Services.Author.GetById(id.Value) : null;
+
+            if (data != null)
+            {
+                AuthorDetailViewModel model = new AuthorDetailViewModel
+                {
+                    Id = data.Id,
+                    FirstName = data.FirstName,
+                    LastName = data.LastName,
+                    Status = data.Status == 1 ? "正常" : "停用",
+                    CreateTime = data.CreateTime,
+                    UpdateTime = data.UpdateTime
+
+                };
+
+                return View(model);
+            }
+            else
+            {
+                TempData[TempDataKey.ErrorMessage] = "找不到資料";
+                return RedirectToAction("Index");
+            }
+        }
+
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            var data = id.HasValue ? Services.Author.GetById(id.Value) : null;
+
+            if(data != null)
+            {
+                AuthorDetailViewModel model = new AuthorDetailViewModel
+                {
+                    Id = data.Id,
+                    FirstName = data.FirstName,
+                    LastName = data.LastName,
+                    Status = data.Status == 1 ? "正常" : "停用",
+                    CreateTime = data.CreateTime,
+                    UpdateTime = data.UpdateTime
+
+                };
+
+                return View(model);
+            }
+            else
+            {
+                TempData[TempDataKey.ErrorMessage] = "找不到資料";
+                return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult SubmitDelete(int id)
+        {
+            Author data = new Author { Id = id };
+
+            var result = Services.Author.Delete(data);
+            if (result.Success)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData[TempDataKey.ErrorMessage] = result.Exception != null ? result.Exception.Message : result.Message;
                 return View();
             }
         }

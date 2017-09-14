@@ -17,6 +17,7 @@ namespace NovelDemo.Web.Application.Infrastructure
 
         public LayoutController()
         {
+            //TODO: 直接實體化服務介面，之後需改成使用依賴注入的方式由外部決定介面實體
             string connectionString = ConfigurationManager.ConnectionStrings["NovelDemoDb"].ToString();
             IDbConnectionFactory dbConnectionFactory = new DatabaseConnectionFactory(connectionString);
             IBookService book = new BookService(new BookRepository(dbConnectionFactory));

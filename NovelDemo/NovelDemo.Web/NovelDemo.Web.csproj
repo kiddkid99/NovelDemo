@@ -142,7 +142,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Infrastructure\TempDataKey.cs" />
     <Compile Include="Application\ViewModel\AuthorAddViewModel.cs" />
+    <Compile Include="Application\ViewModel\AuthorDetailViewModel.cs" />
     <Compile Include="Application\ViewModel\AuthorEditViewModel.cs" />
     <Compile Include="Application\ViewModel\AuthorIndexViewModel.cs" />
     <Compile Include="Application\ViewModel\AuthorViewModel.cs" />
@@ -165,6 +167,8 @@
     <Content Include="Views\Author\Index.cshtml" />
     <Content Include="Views\Author\Add.cshtml" />
     <Content Include="Views\Author\Edit.cshtml" />
+    <Content Include="Views\Author\Detail.cshtml" />
+    <Content Include="Views\Author\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
