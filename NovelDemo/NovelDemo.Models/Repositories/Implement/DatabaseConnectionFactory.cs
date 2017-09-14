@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NovelDemo.Models.Repositories.Interface;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NovelDemo.Models.Repositories.Interface;
 using System.Data.SqlClient;
 
 namespace NovelDemo.Models.Repositories.Implement

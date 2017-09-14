@@ -1,12 +1,12 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using System.Web.Mvc;
 using NovelDemo.Models.Repositories.Implement;
 using NovelDemo.Models.Repositories.Interface;
-using NovelDemo.Service.Interface;
 using NovelDemo.Service.Implement;
+using NovelDemo.Service.Interface;
 using System.Configuration;
 using System.Reflection;
+using System.Web.Mvc;
 
 namespace NovelDemo.Web
 {

@@ -1,11 +1,8 @@
-﻿using NovelDemo.Service.Interface;
+﻿using NovelDemo.Models.Entity;
+using NovelDemo.Models.Repositories.Interface;
+using NovelDemo.Service.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NovelDemo.Models.Entity;
-using NovelDemo.Models.Repositories.Interface;
 
 namespace NovelDemo.Service.Implement
 {

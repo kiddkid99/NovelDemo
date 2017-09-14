@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NovelDemo.Models.Repositories.Interface;
-using NovelDemo.Models.Repositories.Implement;
+﻿using DapperExtensions;
 using NovelDemo.Models.Entity;
-using DapperExtensions;
+using NovelDemo.Models.Repositories.Interface;
 
 
 namespace NovelDemo.Models.Repositories.Implement

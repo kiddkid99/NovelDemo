@@ -1,12 +1,8 @@
-﻿using System;
+﻿using DapperExtensions;
+using NovelDemo.Models.Entity.Mapping;
+using NovelDemo.Models.Repositories.Interface;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DapperExtensions;
-using NovelDemo.Models.Repositories.Interface;
-using System.Data.Common;
-using NovelDemo.Models.Entity.Mapping;
 
 namespace NovelDemo.Models.Repositories.Implement
 {

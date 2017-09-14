@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NovelDemo.Service.Interface;
+﻿using NovelDemo.Service.Interface;
+using System;
 
 namespace NovelDemo.Service.Implement
 {
