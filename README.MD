@@ -10,7 +10,7 @@ A simple CRUD Web application.
 - Twitter Bootstrap
 
 
-## Patters & Practices
+## Patterns & Practices
 - Repository Pattern & Generic Repository
 - Dependency Injection
 
