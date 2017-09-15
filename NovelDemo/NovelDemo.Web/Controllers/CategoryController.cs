@@ -19,6 +19,7 @@ namespace NovelDemo.Web.Controllers
         // GET: Category
         public ActionResult Index()
         {
+            //TODO: 完成實做
             return View();
         }
     }
